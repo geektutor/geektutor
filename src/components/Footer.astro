@@ -1,0 +1,71 @@
+---
+const year = new Date().getFullYear();
+const links = [
+  { href: 'https://linkedin.com/in/geektutor', label: 'LinkedIn' },
+  { href: 'https://twitter.com/geektutor', label: 'X / Twitter' },
+  { href: 'https://github.com/geektutor', label: 'GitHub' },
+];
+---
+
+<footer>
+  <div class="container footer-inner">
+    <p class="footer-name">Sodiq Akinjobi</p>
+    <p class="footer-tagline">Building tech ecosystems across Africa.</p>
+    <ul class="footer-links">
+      {links.map(l => (
+        <li><a href={l.href} target="_blank" rel="noopener">{l.label}</a></li>
+      ))}
+    </ul>
+    <p class="footer-copy">&copy; {year} Geektutor. Built with love @ home.</p>
+  </div>
+</footer>
+
+<style>
+footer {
+  border-top: 1px solid var(--color-border);
+  padding: 3rem 0;
+  margin-top: 0;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.footer-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.footer-tagline {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--color-accent); }
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  opacity: 0.5;
+  margin-top: 0.5rem;
+}
+</style>

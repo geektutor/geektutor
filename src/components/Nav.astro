@@ -1,0 +1,150 @@
+---
+const links = [
+  { href: '#about', label: 'About' },
+  { href: '#work', label: 'Work' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#speaking', label: 'Speaking' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<header class="nav-wrap">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo">
+      Geek<span class="accent">tutor</span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        {links.map(l => (
+          <li><a href={l.href}>{l.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <a href="mailto:sodiq.akinjobi@gmail.com" class="nav-cta">Get in touch</a>
+    <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="nav-mobile" id="navMobile">
+    {links.map(l => (
+      <a href={l.href}>{l.label}</a>
+    ))}
+    <a href="mailto:sodiq.akinjobi@gmail.com" class="mobile-cta">Get in touch</a>
+  </div>
+</header>
+
+<style>
+.nav-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 31, 22, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  height: 64px;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+nav { margin-left: auto; }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--color-text); }
+
+.nav-cta {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.45rem 1.1rem;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.nav-cta:hover {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: auto;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  transition: 0.2s;
+}
+
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--color-border);
+  padding: 1rem 1.5rem 1.5rem;
+}
+
+.nav-mobile a {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.nav-mobile a:last-child { border-bottom: none; }
+
+.mobile-cta {
+  color: var(--color-accent) !important;
+  font-weight: 600;
+}
+
+.nav-mobile.open { display: flex; }
+
+@media (max-width: 768px) {
+  nav, .nav-cta { display: none; }
+  .nav-toggle { display: flex; }
+}
+</style>
+
+<script>
+const toggle = document.getElementById('navToggle');
+const mobile = document.getElementById('navMobile');
+toggle?.addEventListener('click', () => mobile?.classList.toggle('open'));
+mobile?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobile?.classList.remove('open')));
+</script>

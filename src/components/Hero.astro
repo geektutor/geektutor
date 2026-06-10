@@ -1,0 +1,218 @@
+---
+---
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="dot"></span>
+          <span>Program Manager · Developer Ecosystem</span>
+        </div>
+        <h1 class="hero-headline">
+          Building the infrastructure<br/>
+          for Africa's next<br/>
+          <span class="accent">million developers.</span>
+        </h1>
+        <p class="hero-sub">
+          I'm Sodiq Akinjobi — I support developer programs across Sub-Saharan Africa,
+          organize conferences, and build products that help people enter and thrive in tech.
+        </p>
+        <div class="pillars-ticker">
+          <div class="pillar">
+            <span class="pillar-word">Education</span>
+          </div>
+          <div class="pillar-divider"></div>
+          <div class="pillar">
+            <span class="pillar-word">Technology</span>
+          </div>
+          <div class="pillar-divider"></div>
+          <div class="pillar">
+            <span class="pillar-word">People</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hero-photo-wrap">
+        <img src="/geektutor.jpeg" alt="Sodiq Akinjobi" class="hero-photo" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.hero {
+  padding: 6rem 0 5rem;
+  border-top: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(232, 168, 56, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.75rem;
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.hero-headline {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  max-width: 700px;
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  max-width: 540px;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.btn-primary {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border-radius: 4px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+.btn-ghost {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  color: var(--color-text-muted);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.btn-ghost:hover {
+  color: var(--color-text);
+  border-color: rgba(240, 236, 228, 0.3);
+}
+
+.pillars-ticker {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1.5rem 2rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  max-width: 480px;
+}
+
+.pillar {
+  display: flex;
+  align-items: center;
+}
+
+.pillar-word {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+}
+
+.pillar-divider {
+  width: 1px;
+  height: 28px;
+  background: var(--color-border);
+  flex-shrink: 0;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-photo-wrap {
+  flex-shrink: 0;
+  width: 340px;
+}
+
+.hero-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  filter: grayscale(20%);
+}
+
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column-reverse;
+    gap: 2.5rem;
+  }
+  .hero-photo-wrap {
+    width: 220px;
+    align-self: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero { padding: 4rem 0 3rem; }
+  .pillars-ticker {
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+  }
+  .hero-photo-wrap {
+    width: 180px;
+  }
+}
+</style>

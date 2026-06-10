@@ -1,0 +1,280 @@
+---
+import Base from '../layouts/Base.astro';
+
+const topics = [
+  {
+    title: 'Building Developer Communities at Scale',
+    description: 'Lessons from managing GDG chapters across 31 African countries — what works, what fails, and how to measure impact in emerging markets.',
+  },
+  {
+    title: 'The African Developer Ecosystem in 2025',
+    description: 'A data-driven look at where Africa\'s 700K+ developers are, what they\'re building, and what programs are accelerating the next generation.',
+  },
+  {
+    title: 'Developer Relations as a Growth Engine',
+    description: 'How DevRel programs create compounding returns for companies entering African markets — and how to build the business case for it.',
+  },
+  {
+    title: 'API Design & Developer Experience',
+    description: 'Practical approaches to building APIs that developers love, from documentation strategy to community feedback loops.',
+  },
+];
+---
+
+<Base
+  title="Speaker Kit — Sodiq Akinjobi"
+  description="Speaker kit for Sodiq Akinjobi — Program Manager, developer community builder, and conference organizer."
+>
+  <div class="kit-page">
+    <div class="container">
+      <div class="kit-hero">
+        <p class="section-label">Speaker Kit</p>
+        <h1>Sodiq Akinjobi</h1>
+        <p class="kit-role">Program Manager · Developer Ecosystem · Africa</p>
+      </div>
+
+      <div class="kit-grid">
+        <div class="kit-bio">
+          <h2>Bio</h2>
+          <p>
+            Sodiq Akinjobi is a Program Manager supporting Google Developer Groups across Sub-Saharan Africa —
+            reaching over 200,000 developers annually through events, programs, and community initiatives.
+          </p>
+          <p>
+            A Systems Engineering graduate of the University of Lagos and MBA holder from Quantic School of
+            Business and Technology, Sodiq sits at the intersection of people, programs, and products. Beyond
+            his program management work, he founded API Conference Lagos, organizes DevFest Lagos, and builds
+            products like MorningScroll — a daily tech digest for African builders.
+          </p>
+          <p>
+            He has spoken at TEDx, participated in Google Cloud Roadshows across African cities, and served as
+            Digital Working Group Lead for DevFest Lagos.
+          </p>
+
+          <div class="kit-actions">
+            <a href="mailto:sodiq.akinjobi@gmail.com" class="btn-primary">Book me to speak</a>
+            <a href="https://bit.ly/geek-headshot" class="btn-ghost" target="_blank" rel="noopener">View headshot →</a>
+          </div>
+        </div>
+
+        <div class="kit-side">
+          <div class="kit-card">
+            <h3>Quick stats</h3>
+            <ul>
+              <li><span class="stat-n">200K+</span> developers reached/yr</li>
+              <li><span class="stat-n">4+</span> years in developer ecosystems</li>
+              <li><span class="stat-n">3</span> conferences founded or led</li>
+            </ul>
+          </div>
+          <div class="kit-card">
+            <h3>For event organizers</h3>
+            <p>I'm based in Lagos, Nigeria and available for in-person or remote engagements. 
+            Travel arrangements welcome for international events.</p>
+            <a href="mailto:sodiq.akinjobi@gmail.com" class="card-link">
+              sodiq.akinjobi@gmail.com →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kit-topics">
+        <h2>Talk topics</h2>
+        <div class="topics-grid">
+          {topics.map(t => (
+            <div class="topic-card">
+              <h3>{t.title}</h3>
+              <p>{t.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+.kit-page {
+  padding-bottom: 6rem;
+}
+
+.kit-hero {
+  padding: 3rem 0 2.5rem;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 3rem;
+}
+
+.back-link {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+  transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--color-text); }
+
+.kit-hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.kit-role {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-family: var(--font-display);
+}
+
+.kit-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  align-items: start;
+}
+
+.kit-bio h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1.25rem;
+}
+
+.kit-bio p {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.kit-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.7rem 1.5rem;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border-radius: 4px;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover { opacity: 0.88; }
+
+.btn-ghost {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0.7rem 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  color: var(--color-text-muted);
+  transition: color 0.2s;
+}
+
+.btn-ghost:hover { color: var(--color-text); }
+
+.kit-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.kit-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.kit-card h3 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.kit-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.kit-card li {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stat-n {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-accent);
+  font-size: 1rem;
+}
+
+.kit-card p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.card-link {
+  font-size: 0.8rem;
+  font-family: var(--font-display);
+  color: var(--color-accent);
+  transition: opacity 0.2s;
+}
+
+.card-link:hover { opacity: 0.75; }
+
+.kit-topics h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.topic-card {
+  padding: 1.75rem;
+  background: var(--color-bg-card);
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.topic-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+
+.topic-card p {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .kit-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+</style>

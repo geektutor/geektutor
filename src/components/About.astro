@@ -1,0 +1,122 @@
+---
+---
+
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-left">
+      <p class="section-label">About</p>
+      <h2>Program manager.<br/>Community architect.<br/>Builder.</h2>
+    </div>
+    <div class="about-right">
+      <p>
+        I'm a Program Manager where I support developer programs that collectively
+        reach over 200,000 developers every year.
+      </p>
+      <p>
+        My background is in Systems Engineering (University of Lagos) and I hold an MBA 
+        from Quantic School of Business and Technology. I spend most of my time at the 
+        intersection of people, programs, and products.
+      </p>
+      <p>
+        Beyond my day job, I co-founded API Conference Lagos, run Finance Roundtable,
+        program manage events for Web3 Afrika, and launched <a href="https://morningscroll.xyz/" target="_blank" rel="noopener noreferrer" class="inline-link">Morning Scroll</a>.
+      </p>
+
+      <ul class="about-list">
+        <li>
+          <span class="list-icon">◈</span>
+          BSc Systems Engineering, University of Lagos
+        </li>
+        <li>
+          <span class="list-icon">◈</span>
+          MBA, Quantic School of Business & Technology (96.07%)
+        </li>
+        <li>
+          <span class="list-icon">◈</span>
+          Based in Lagos, Nigeria
+        </li>
+      </ul>
+
+      <a href="mailto:sodiq.akinjobi@gmail.com" class="about-cta">
+        Get in touch <span>→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-left h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  margin-top: 0.5rem;
+  line-height: 1.25;
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.about-right p {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.about-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.about-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.list-icon {
+  color: var(--color-accent);
+  font-size: 0.65rem;
+  margin-top: 0.3rem;
+  flex-shrink: 0;
+}
+
+.inline-link {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.about-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--color-accent);
+  margin-top: 0.5rem;
+  transition: gap 0.2s;
+}
+
+.about-cta:hover { gap: 0.75rem; }
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+</style>

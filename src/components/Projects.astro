@@ -1,0 +1,113 @@
+---
+import { getCollection } from 'astro:content';
+const allProjects = await getCollection('projects');
+const startYear = (y: number | string) => parseInt(y.toString().match(/\d{4}/)?.[0] ?? '0');
+const sorted = allProjects.filter(p => !p.data.draft).sort((a, b) => startYear(b.data.year) - startYear(a.data.year));
+---
+
+<section id="projects">
+  <div class="container">
+    <p class="section-label">Projects</p>
+    <h2 class="projects-heading">Things I've shipped.</h2>
+
+    <div class="projects-grid">
+      {sorted.map(p => (
+        <a href={p.data.url} class="project-card" target="_blank" rel="noopener">
+          <div class="project-top">
+            <span class="project-year">{p.data.year}</span>
+            <span class="project-arrow">↗</span>
+          </div>
+          <h3 class="project-name">{p.data.title}</h3>
+          <p class="project-desc">{p.data.description}</p>
+          <div class="project-tags">
+            {p.data.tags.map((t: string) => <span class="tag">{t}</span>)}
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.projects-heading {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 3rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.75rem;
+  background: var(--color-bg-card);
+  transition: background 0.2s;
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.project-card:hover {
+  background: var(--color-bg-subtle);
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-year {
+  font-size: 0.7rem;
+  font-family: var(--font-display);
+  color: var(--color-text-muted);
+  letter-spacing: 0.06em;
+}
+
+.project-arrow {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  transition: color 0.2s, transform 0.2s;
+}
+
+.project-card:hover .project-arrow {
+  color: var(--color-accent);
+  transform: translate(2px, -2px);
+}
+
+.project-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.project-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+}
+
+.tag {
+  font-size: 0.68rem;
+  font-family: var(--font-display);
+  padding: 0.18rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  color: var(--color-text-muted);
+}
+</style>
